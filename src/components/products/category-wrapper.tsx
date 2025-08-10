@@ -1,7 +1,7 @@
-import useProducts from "@/hooks/useProducts";
+import useProducts from "@hooks/useProducts";
 import ProductWrapper from "./product-wrapper";
-import useCategories from "@/hooks/useCategories";
-import type { Category } from "@/lib/types";
+import useCategories from "@hooks/useCategories";
+import type { Category } from "@lib/types";
 import CategoryWrapperSkeleton from "./category-wrapper-skeleton";
 
 export default function CategoryWrapper() {

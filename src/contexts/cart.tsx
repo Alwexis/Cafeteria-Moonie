@@ -1,4 +1,4 @@
-import type { CartItem, Product } from "@/lib/types";
+import type { CartItem, Product } from "@lib/types";
 import { createContext, useState, useCallback } from "react";
 
 interface CartContextType {
@@ -8,6 +8,7 @@ interface CartContextType {
   decreaseItem: (id: string) => void;
   clearCart: () => void;
   getTotal: () => number;
+  getTotalItems: () => number;
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -55,8 +56,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
   }, [cart])
 
+  const getTotalItems = useCallback(() => {
+    return cart.reduce((acc, item) => acc + item.quantity, 0)
+  }, [cart])
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, decreaseItem, clearCart, getTotal }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, decreaseItem, clearCart, getTotal, getTotalItems }}>
       {children}
     </CartContext.Provider>
   );

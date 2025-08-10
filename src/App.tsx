@@ -1,19 +1,18 @@
-import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
-import CartSidebar from '@/components/cart/cart-sidebar';
+import { SidebarProvider, SidebarInset } from '@components/ui/sidebar';
+import CartSidebar from '@components/cart/cart-sidebar';
 import './App.css'
-import CartSidebarTrigger from '@/components/cart/customtrigger';
-import Navbar from '@/components/ui/navbar';
-import CategoryWrapper from '@/components/products/category-wrapper';
-import { CartProvider } from '@/contexts/cart';
+import CartSidebarTrigger from '@components/cart/custom-trigger';
+import Navbar from '@components/ui/navbar';
+import CategoryWrapper from '@components/products/category-wrapper';
+import { CartProvider } from '@contexts/cart';
 import { useState } from 'react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
 import { CheckCircle2Icon } from 'lucide-react';
 
 function App() {
   const [showAlert, setShowAlert] = useState<boolean>(false);
 
   const onOrderEmission = () => {
-    console.log("Yep yep yep")
     setShowAlert(true);
     setTimeout(() => setShowAlert(false), 2500);
   }

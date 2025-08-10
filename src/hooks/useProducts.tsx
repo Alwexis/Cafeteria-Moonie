@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { CategorizedProducts, Product } from "../lib/types";
+import type { CategorizedProducts, Product } from "@lib/types";
 
 const URL: string = import.meta.env.VITE_MOCK_API;
 

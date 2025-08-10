@@ -1,7 +1,7 @@
-import type { Product } from "@/lib/types";
+import type { Product } from "@lib/types";
 import ProductCard from "./product-card";
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "@/contexts/cart";
+import { CartContext } from "@contexts/cart";
 
 interface Props {
   products: Product[];
@@ -27,7 +27,7 @@ export default function ProductWrapper({ products }: Props) {
     <section className="flex flex-col">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-2">
         {shownProducts.map((product: Product, i: number) => (
-          <ProductCard onCartAdd={(prod: Product) => addToCart(prod)} styles={{ animationDelay: `${i * 50}ms` }} key={product.id} product={product} />
+          <ProductCard onCartAdd={(prod: Product) => addToCart(prod)} styles={{ animationDelay: `${i * 20}ms` }} key={product.id} product={product} />
         ))}
       </div>
       {

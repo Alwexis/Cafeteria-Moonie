@@ -1,4 +1,4 @@
-import type { Product } from "@/lib/types"
+import type { Product } from "@lib/types"
 import clsx from "clsx";
 import { BadgeCheck, ShoppingBasket } from "lucide-react"
 import { useState } from "react";
@@ -26,14 +26,14 @@ export default function ProductCard({ product, onCartAdd, classes = "", styles={
         <h4 className="font-semibold text-sm">{product.name}</h4>
         <p className="font-light text-xs line-clamp-3">{product.description}</p>
         <div className="w-full flex items-end justify-between mt-2.5">
-          <span className="font-light text-xs text-red-500">${product.price}</span>
+          <span className="font-light text-xs text-indigo-600">${product.price}</span>
           <button type="button" onClick={() => handleAdd(product)}
             className={clsx(
-              "flex items-center text-white px-2.5 py-1 rounded-xs md:rounded-sm cursor-pointer hover:bg-neutral-600 transition-colors",
-              { "bg-blue-800": added, "bg-neutral-800": !added }
+              "flex items-center text-white px-2.5 py-1 rounded-xs md:rounded-sm cursor-pointer transition-colors",
+              { "bg-blue-800": added, "bg-neutral-800 hover:bg-neutral-600": !added }
             )}>
-            <ShoppingBasket width={16} className={`transition-all duration-300 ${added ? 'w-0' : 'w-6'}`} />
-            <BadgeCheck width={16} className={`transition-all duration-300 ${added ? 'w-6' : 'w-0'}`} />
+            <ShoppingBasket width={16} className={clsx("transition-all duration-300", { "w-0": added, "w-6": !added })} />
+            <BadgeCheck width={16} className={clsx("transition-all duration-300", { "w-0": !added, "w-6": added })} />
             <span className={clsx("text-xs font-light transition-all duration-300 w-full overflow-hidden", { "max-w-0 ml-0": added, "max-w-32 ml-2": !added })}>Agregar</span>
           </button>
         </div>

@@ -1,5 +1,5 @@
-import useCategories from "@/hooks/useCategories"
-import type { Category } from "@/lib/types";
+import useCategories from "@hooks/useCategories"
+import type { Category } from "@lib/types";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./navigation-menu";
 
 export default function Navbar() {

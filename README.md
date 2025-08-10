@@ -52,7 +52,7 @@ src/
 ---
 
 ## 🚀 Comenzar a usar
-Ingresa a la [página web](https://cafeteria-moonie.vercel.app/) o inicialo de forma local con:
+
 ```bash
 npm install
 npm run dev
